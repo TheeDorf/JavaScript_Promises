@@ -24,14 +24,14 @@ function getList() {
 // Display the failure message in the paragraph element with id="error" (check index.html file)
 
 
-getList ()
+getList()
 .then((hobbits)=>{
 hobbits.forEach((hobbit)=>{
-  const li = document.createElement("list");
+  let li = document.createElement("li");
   li.textContent = hobbit;
-  document.querySelector("ul").appendChild(li);
+  document.getElementById("list").appendChild(li);
 })
 })
 .catch((error)=>{
-  document.querySelector("p").textContent = error.message;
+  document.getElementById("error").textContent = error.message;
 });
