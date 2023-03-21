@@ -22,3 +22,16 @@ function getList() {
 
 // TODO: If the promise rejects with the failure object
 // Display the failure message in the paragraph element with id="error" (check index.html file)
+
+
+getList ()
+.then((hobbits)=>{
+hobbits.forEach((hobbit)=>{
+  const li = document.createElement("list");
+  li.textContent = hobbit;
+  document.querySelector("ul").appendChild(li);
+})
+})
+.catch((error)=>{
+  document.querySelector("p").textContent = error.message;
+});
